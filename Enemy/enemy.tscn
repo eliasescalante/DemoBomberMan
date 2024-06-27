@@ -1,0 +1,150 @@
+[gd_scene load_steps=20 format=3 uid="uid://bo5m6y8lrckx"]
+
+[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_h3yoa"]
+[ext_resource type="Texture2D" uid="uid://xb5mnis1ckuh" path="res://Assets/Enemy/bat/fly-front.png" id="1_wswlj"]
+[ext_resource type="Texture2D" uid="uid://cudx6rfbdspwb" path="res://Assets/Enemy/bat/fly-persp-left.png" id="2_l0bw3"]
+[ext_resource type="Texture2D" uid="uid://fa2pkwbc4ugm" path="res://Assets/Enemy/bat/fly-persp-right.png" id="3_y1716"]
+[ext_resource type="Texture2D" uid="uid://bl527gx7cnimj" path="res://Assets/Enemy/bat/fly-back.png" id="4_5gadq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_faabd"]
+size = Vector2(22, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjhqi"]
+atlas = ExtResource("1_wswlj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmv7b"]
+atlas = ExtResource("1_wswlj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li0e2"]
+atlas = ExtResource("1_wswlj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd4uh"]
+atlas = ExtResource("2_l0bw3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44db4"]
+atlas = ExtResource("2_l0bw3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77hlp"]
+atlas = ExtResource("2_l0bw3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nldjv"]
+atlas = ExtResource("3_y1716")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwuwa"]
+atlas = ExtResource("3_y1716")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdn5r"]
+atlas = ExtResource("3_y1716")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwf1r"]
+atlas = ExtResource("4_5gadq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gcko"]
+atlas = ExtResource("4_5gadq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y27hm"]
+atlas = ExtResource("4_5gadq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8xag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjhqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmv7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li0e2")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd4uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44db4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77hlp")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nldjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwuwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdn5r")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwf1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gcko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y27hm")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Area2D" groups=["enemy"]]
+script = ExtResource("1_h3yoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_faabd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w8xag")
+animation = &"up"
+
+[node name="RayCasts" type="Node2D" parent="."]
+
+[node name="up" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(0, -17)
+
+[node name="down" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(0, 16)
+
+[node name="left" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(-18, 0)
+
+[node name="right" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(18, 0)
+
+[node name="ReadyTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="ReadyTimer" to="." method="_on_ready_timer_timeout"]

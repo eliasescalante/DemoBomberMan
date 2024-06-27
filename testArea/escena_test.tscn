@@ -1,0 +1,193 @@
+[gd_scene load_steps=10 format=3 uid="uid://cikmx230gv13j"]
+
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_56wd4"]
+[ext_resource type="PackedScene" uid="uid://caew606bc4uen" path="res://MainCharacter/main_character.tscn" id="1_clgtp"]
+[ext_resource type="PackedScene" uid="uid://bg4yps4vmqq5e" path="res://Header/header.tscn" id="1_eg4d8"]
+[ext_resource type="PackedScene" uid="uid://yg4485q85eh0" path="res://walls/fixed/level_limits.tscn" id="2_cgnud"]
+[ext_resource type="PackedScene" uid="uid://crwncg846rrvv" path="res://Background/background.tscn" id="2_tjjph"]
+[ext_resource type="PackedScene" uid="uid://cxnu6cc46rl3c" path="res://walls/WoodBox/wood_box.tscn" id="3_kpuql"]
+[ext_resource type="PackedScene" uid="uid://b157gyd8mv1wo" path="res://walls/fixed/wall_1.tscn" id="5_wvytl"]
+[ext_resource type="PackedScene" uid="uid://bvy16u0w86mdq" path="res://CollectableItems/collectable_keys.tscn" id="7_85poj"]
+[ext_resource type="PackedScene" uid="uid://6i8bcli6aon5" path="res://CollectableItems/collectable_bomb.tscn" id="8_hn6nw"]
+
+[node name="EscenaTest" type="Node2D" groups=["level"]]
+script = ExtResource("1_56wd4")
+
+[node name="Header" parent="." instance=ExtResource("1_eg4d8")]
+
+[node name="Background" parent="." instance=ExtResource("2_tjjph")]
+position = Vector2(0, 1)
+
+[node name="MainCharacter" parent="." instance=ExtResource("1_clgtp")]
+position = Vector2(48, 112)
+
+[node name="levelLimits" parent="." instance=ExtResource("2_cgnud")]
+
+[node name="FixedWalls" type="Node2D" parent="."]
+
+[node name="wall1" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(80, 144)
+
+[node name="wall2" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(112, 144)
+
+[node name="wall3" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(208, 144)
+
+[node name="wall4" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(144, 144)
+
+[node name="wall5" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(208, 112)
+
+[node name="wall6" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(48, 208)
+
+[node name="wall7" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(80, 208)
+
+[node name="wall8" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(144, 208)
+
+[node name="wall9" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(272, 144)
+
+[node name="wall10" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(304, 144)
+
+[node name="wall11" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(336, 144)
+
+[node name="wall12" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(432, 144)
+
+[node name="wall13" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(368, 144)
+
+[node name="wall14" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(432, 112)
+
+[node name="wall15" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(272, 208)
+
+[node name="wall16" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(304, 208)
+
+[node name="wall17" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(368, 208)
+
+[node name="wall18" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(496, 144)
+
+[node name="wall19" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(176, 208)
+
+[node name="wall20" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(144, 272)
+
+[node name="wall21" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(80, 272)
+
+[node name="wall22" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(432, 208)
+
+[node name="wall23" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(496, 208)
+
+[node name="wall24" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(304, 176)
+
+[node name="wall25" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(208, 240)
+
+[node name="wall26" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(272, 240)
+
+[node name="wall27" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(496, 240)
+
+[node name="wall28" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(336, 272)
+
+[node name="wall29" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(400, 240)
+
+[node name="wall30" parent="FixedWalls" instance=ExtResource("5_wvytl")]
+position = Vector2(432, 240)
+
+[node name="WoodBoxs" type="Node2D" parent="."]
+
+[node name="WoodBox9" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(80, 240)
+
+[node name="WoodBox8" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(240, 240)
+
+[node name="WoodBox" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(112, 112)
+
+[node name="WoodBox2" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(112, 176)
+
+[node name="WoodBox5" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(304, 112)
+
+[node name="WoodBox3" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(176, 144)
+
+[node name="WoodBox6" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(400, 144)
+
+[node name="WoodBox4" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(240, 144)
+
+[node name="WoodBox7" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(208, 208)
+
+[node name="WoodBox10" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(336, 208)
+
+[node name="WoodBox11" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(464, 144)
+
+[node name="WoodBox12" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(496, 176)
+
+[node name="WoodBox13" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(528, 144)
+
+[node name="WoodBox14" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(464, 240)
+
+[node name="WoodBox15" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(496, 272)
+
+[node name="WoodBox16" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(144, 240)
+
+[node name="WoodBox17" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(176, 240)
+
+[node name="WoodBox18" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(304, 272)
+
+[node name="WoodBox19" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(304, 240)
+
+[node name="WoodBox20" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(208, 272)
+
+[node name="WoodBox21" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(400, 208)
+
+[node name="WoodBox22" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(464, 208)
+
+[node name="WoodBox23" parent="WoodBoxs" instance=ExtResource("3_kpuql")]
+position = Vector2(48, 176)
+
+[node name="CollectableKeys" parent="." instance=ExtResource("7_85poj")]
+position = Vector2(112, 272)
+
+[node name="CollectableBomb" parent="." instance=ExtResource("8_hn6nw")]
+position = Vector2(144, 176)

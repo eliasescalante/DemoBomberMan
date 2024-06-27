@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://6i8bcli6aon5"]
+
+[ext_resource type="Script" path="res://CollectableItems/collectable_item.gd" id="1_dfr50"]
+[ext_resource type="Texture2D" uid="uid://cekivikiat2yf" path="res://Assets/Items/dynamite-pack6.png" id="1_nm55n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i2es"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8tsl"]
+atlas = ExtResource("1_nm55n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gckdl"]
+atlas = ExtResource("1_nm55n")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbp3m"]
+atlas = ExtResource("1_nm55n")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u6rw"]
+atlas = ExtResource("1_nm55n")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23bew"]
+atlas = ExtResource("1_nm55n")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l642"]
+atlas = ExtResource("1_nm55n")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bix3t"]
+atlas = ExtResource("1_nm55n")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njg3p"]
+atlas = ExtResource("1_nm55n")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_77n4c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8tsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gckdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbp3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u6rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23bew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l642")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bix3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njg3p")
+}],
+"loop": true,
+"name": &"bounce",
+"speed": 7.0
+}]
+
+[node name="CollectableBomb" type="Area2D" groups=["collectable_bomb"]]
+script = ExtResource("1_dfr50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8i2es")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_77n4c")
+animation = &"bounce"
+frame_progress = 0.899569
