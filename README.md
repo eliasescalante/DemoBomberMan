@@ -11,6 +11,8 @@
 ## En esta versión deberemos buscar la llave y la puerta para poder pasar de nivel, mientras tanto eliminamos enemigos y rompemos cajas. Pero cuidado las bombas se acaban
 
 ----
+## Link para probar la demo: https://elias-escalante.itch.io/demo-version-free-bomberman
+----
 ## Preview
 
 ![image](https://github.com/eliasescalante/BomberMan/blob/master/Capture1.JPG)
