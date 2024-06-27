@@ -13,8 +13,8 @@
 ----
 ## Preview
 
-![image]()
-![image]()
+![image](https://github.com/eliasescalante/BomberMan/blob/master/Capture1.JPG)
+![image](https://github.com/eliasescalante/BomberMan/blob/master/Capture2.JPG)
 
 ----
 ![GitHub repo size](https://img.shields.io/github/repo-size/eliasescalante/BomberMan
