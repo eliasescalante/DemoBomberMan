@@ -1,6 +1,7 @@
 # Proyecto "bomberman"
 ----
-## Proyecto de desarrollo de una demo basado en el juego retro Bomberman. Este proyecto forma parte del curso de GODOT 4 dictado por " FerTer GameDev"
+## Proyecto desarrollado en GODOT 4 de una demo basado en el famoso juego retro, Bomberman. 
+Este proyecto forma parte del curso de GODOT 4 dictado por " FerTer GameDev"
 ----
 ## Se utlizo assets de las siguientes fuentes:
 
